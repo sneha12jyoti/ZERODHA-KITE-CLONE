@@ -139,17 +139,4 @@ The application underwent automated testing covering:
 - Input validation and security.
 - Frontend production build.
 
-**39 automated test assertions passed with 0 failures**, according to the project's technical audit report.
-```
 
----
-
-### One important recommendation
-
-Your project has a particularly interesting backend feature: **the atomic order execution and financial balance management**.
-
-Highlight this in your README and resume. It differentiates your project from ordinary frontend-only trading clones.
-
-Also, your `db.js` currently mentions a `MongoMemoryServer` fallback. Before deployment, make sure production explicitly requires MongoDB Atlas rather than silently falling back to an in-memory database.
-
-**Next, I'd recommend adding a Screenshots section to your README.** A recruiter should be able to understand your dashboard, holdings, order book and funds management without running the project. 🚀
