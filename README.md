@@ -8,13 +8,72 @@ A full-stack stock trading simulator inspired by Zerodha Kite, built using React
 
 ## 🚀 Live Demo
 
-- **Frontend:** Coming Soon
-- **Backend API:** Coming Soon
+- Live Server Status
+
+Both services are running in the background and ready to use:
+
+Frontend Application: http://localhost:3000
+Backend API: http://localhost:5000
+API Health Check: http://localhost:5000/api/health
 - **GitHub Repository:** https://github.com/sneha12jyoti/ZERODHA-KITE-CLONE
 
 ---
 
 ## ✨ Key Features
+ZERODHA/
+├── backend/
+│   ├── src/
+│   │   ├── config/db.js             # Local MongoDB connection + MongoMemoryServer fallback
+│   │   ├── middleware/auth.js       # JWT authorization middleware
+│   │   ├── models/
+│   │   │   ├── User.js              # Client schema & bcrypt password hashing
+│   │   │   ├── Stock.js             # 20+ Indian stocks, OHLC, L2 Depth & Historical charts
+│   │   │   ├── Watchlist.js         # 5 watchlist tabs per user
+│   │   │   ├── Order.js             # CNC & MIS order execution records
+│   │   │   ├── Holding.js           # Portfolio holdings with weighted average price
+│   │   │   └── Transaction.js       # Financial ledger & statement
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js        # Register, Login, Demo Login, Me
+│   │   │   ├── stockRoutes.js       # Stocks, live benchmark indices, search, tick engine
+│   │   │   ├── watchlistRoutes.js   # Watchlist management (add, remove, switch tabs)
+│   │   │   ├── orderRoutes.js       # Buy/Sell engine with margin & holdings checks
+│   │   │   ├── portfolioRoutes.js   # Holdings with live P&L and sector analytics
+│   │   │   ├── fundsRoutes.js       # Margin calculations, deposit, withdraw, statement
+│   │   │   └── profileRoutes.js     # User stats, name edit, and simulator reset
+│   │   ├── seed.js                  # Database seeder with realistic Indian equities
+│   │   └── server.js                # Express app & periodic market pulse generator
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   │   └── Navbar.jsx       # Header with live NIFTY 50 & SENSEX ticker
+│   │   │   ├── layout/
+│   │   │   │   └── TradingLayout.jsx# Split workspace (Watchlist sidebar + Content)
+│   │   │   └── trading/
+│   │   │       ├── Watchlist.jsx    # 5 tabs, stock search, green/red ticks, hover bar
+│   │   │       ├── BuySellModal.jsx # Authentic Kite order modal (CNC/MIS, Market/Limit)
+│   │   │       └── StockDetailsModal.jsx # Multi-timeframe Recharts & L2 market depth
+│   │   ├── context/
+│   │   │   ├── AuthContext.jsx      # JWT auth & session management
+│   │   │   ├── MarketContext.jsx    # Live prices, benchmark indices & tick pulse
+│   │   │   ├── ThemeContext.jsx     # Light / Dark mode persistence
+│   │   │   └── ToastContext.jsx     # Order confirmation & notification alerts
+│   │   ├── pages/
+│   │   │   ├── LandingPage.jsx      # Clean Zerodha public homepage
+│   │   │   ├── AuthPage.jsx         # Sign up & Log in with initial demo balance selection
+│   │   │   ├── DashboardPage.jsx    # Portfolio overview, asset allocation, top gainers/losers
+│   │   │   ├── HoldingsPage.jsx     # Portfolio table, individual P&L, sector pie chart
+│   │   │   ├── OrdersPage.jsx       # Order book with filters and execution logs
+│   │   │   ├── FundsPage.jsx        # Margin breakdown, deposit, withdraw & ledger
+│   │   │   └── ProfilePage.jsx      # Account stats, dark mode toggle, and reset simulator
+│   │   ├── index.css                # Kite typography, signature palette & animations
+│   │   └── App.jsx                  # React Router v6 setup & protected route boundaries
+│   ├── vite.config.js               # Vite config with API proxy
+│   └── package.json
+├── README.md                        # Documentation & setup instructions
+└── package.json                     # Root orchestrator scripts
 
 ### 🔐 Authentication & User Management
 - Secure user registration and login.
@@ -124,34 +183,7 @@ The application follows a client-server architecture.
 
 ---
 
-## 📂 Project Structure
 
-```text
-ZERODHA-KITE-CLONE/
-│
-├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   ├── config/
-│   ├── server.js
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── index.html
-│   └── package.json
-│
-├── dashboard/
-│
-├── .gitignore
-├── package-lock.json
-├── audit-tests.js
-└── README.md
-```
-
----
 
 ## ⚙️ Installation & Setup
 
